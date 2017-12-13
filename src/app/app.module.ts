@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
-
 
 import { AppComponent } from './app.component';
 import { SearchComponent } from './search/search.component';
@@ -10,6 +10,7 @@ import { CharacterListItemComponent } from './character-list-item/character-list
 import { PaginationComponent } from './pagination/pagination.component';
 import { HeaderComponent } from './header/header.component';
 
+import { CharactersService } from './characters.service';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,12 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
-  providers: [],
+  providers: [
+    CharactersService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

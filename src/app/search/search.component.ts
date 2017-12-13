@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CharactersService } from '../characters.service';
 
 @Component({
   selector: 'app-search',
@@ -6,13 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  charactersService: CharactersService;
 
-  constructor() { }
+  constructor(charactersService: CharactersService) {
+    this.charactersService = charactersService;
+  }
 
   ngOnInit() {
   }
 
   onSubmit(formData) {
     console.log('submitting', formData.value);
+    this.charactersService.searchCharacters(formData.value);
   }
 }
