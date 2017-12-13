@@ -1,3 +1,16 @@
-<p>
-  character-list-item works!
-</p>
+<div
+  class="list-group-item"
+  [ngClass]="activeClass"
+  (mouseover)="toggleActiveClass($event)"
+  (mouseout)="toggleActiveClass($event)">
+  <div class="character">
+    <img
+      class="rounded character-image border-1"
+      src="{{ character.thumbnail.path + '.' + character.thumbnail.extension }}" alt="Image for {{character.name}}"
+    />
+    <div class="character-information">
+      <h4>{{ character.name }}</h4>
+      <p>{{ character.description }}</p>
+    </div>
+  </div>
+</div>

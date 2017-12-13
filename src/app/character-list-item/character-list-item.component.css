@@ -1,0 +1,17 @@
+.character {
+  display: flex;
+}
+
+img.character-image {
+  height: 150px;
+  min-width: 150px;
+  max-width: 150px;
+}
+
+.character-information {
+  padding-left: 15px;
+}
+
+.list-group-item {
+  cursor: pointer;
+}

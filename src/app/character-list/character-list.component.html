@@ -1,6 +1,6 @@
 <br />
 <div class="row">
-  <div class="col-xs-12">
+  <div class="col">
     <h2 class="mb-2">Results</h2>
     <div
       class="alert alert-info"
@@ -9,13 +9,13 @@
       <strong>No results!</strong> Nothing to see here
 
     </div>
-    <ul
+    <div
       class="list-group"
       *ngIf="characters.length > 0">
-      <li
-        class="list-group-item"
+      <app-character-list-item
         *ngFor="let character of characters"
-      >{{ character.name }}</li>
-    </ul>
+        [character]="character"
+      ></app-character-list-item>
+    </div>
   </div>
 </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-character-list-item',
@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character-list-item.component.css']
 })
 export class CharacterListItemComponent implements OnInit {
+  @Input() character;
+  activeClass: string;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  toggleActiveClass(event) {
+    this.activeClass = event.type === 'mouseover' ? 'active' : '';
+  }
 }
