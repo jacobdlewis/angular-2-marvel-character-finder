@@ -11,7 +11,15 @@
       />
       <div class="character-information">
         <h4>{{ character.name }}</h4>
-        <p>{{ character.description }}</p>
+        <p
+          *ngIf="character.description === ''"
+          class="text-muted font-italic">
+          No description available
+        </p>
+        <p
+          *ngIf="character.description !== ''">
+          {{ character.description }}
+        </p>
       </div>
     </div>
     <div>
