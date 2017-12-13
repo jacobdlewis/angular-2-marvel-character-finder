@@ -2,17 +2,17 @@
   <div class="col">
     <div class="card">
       <div class="card-block">
-        <h3 class="card-title">Character Search</h3>
+        <h3 class="card-title">Character Finder</h3>
         <h5 class="card-subtitle mb-2 text-muted">Learn more about your favorite Marvel superheroes and discover new ones</h5>
         
         <form (ngSubmit)="onSubmit(characterSearch)" #characterSearch="ngForm">
           <div class="form-group" [ngClass]="{'has-danger': nameStartsWithCtrl.invalid && nameStartsWithCtrl.touched}">
-            <label for="nameStartsWith">Name</label>
             <input
               type="text"
               class="form-control"
               id="nameStartsWith"
               name="nameStartsWith"
+              placeholder="Captain America"
               ngModel
               required
               #nameStartsWithCtrl="ngModel">
@@ -22,12 +22,14 @@
                 Please enter a name.
               </span>
           </div>
-          <button
-            type="submit"
-            class="btn btn-primary"
-            [disabled]="characterSearch.pristine || characterSearch.invalid">
-            Submit
-          </button>
+          <div class="d-flex justify-content-center">
+            <button
+              type="submit"
+              class="btn btn-primary"
+              [disabled]="characterSearch.pristine || characterSearch.invalid">
+              Search
+            </button>
+          </div>
         </form>
 
       </div>
