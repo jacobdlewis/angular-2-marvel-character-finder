@@ -17,7 +17,6 @@ export class SearchComponent implements OnInit {
   }
 
   onSubmit(formData) {
-    console.log('submitting', formData.value);
     this.charactersService.searchCharacters(formData.value);
   }
 }
