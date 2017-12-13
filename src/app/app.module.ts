@@ -7,6 +7,7 @@ import { SearchComponent } from './search/search.component';
 import { CharacterListComponent } from './character-list/character-list.component';
 import { CharacterListItemComponent } from './character-list-item/character-list-item.component';
 import { PaginationComponent } from './pagination/pagination.component';
+import { HeaderComponent } from './header/header.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { PaginationComponent } from './pagination/pagination.component';
     SearchComponent,
     CharacterListComponent,
     CharacterListItemComponent,
-    PaginationComponent
+    PaginationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule
