@@ -12,4 +12,7 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSubmit(formData) {
+    console.log('submitting', formData.value);
+  }
 }
