@@ -6,8 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character-list.component.css']
 })
 export class CharacterListComponent implements OnInit {
-
-  constructor() { }
+  characters: Array<{ name: string }> = [];
+  constructor() {
+    this.characters = [
+      { name: 'Black Panther' },
+      { name: 'Captain America' },
+      { name: 'Ms. Marvel' }
+    ];
+  }
 
   ngOnInit() {
   }
