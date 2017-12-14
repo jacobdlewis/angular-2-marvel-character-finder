@@ -1,3 +1,55 @@
-<p>
-  character-details works!
-</p>
+<div
+  *ngIf="character"
+  class="row d-flex justify-content-center character-details">
+  <div class="col-6">
+    <div class="card">
+      <div class="d-flex justify-content-center">
+        <img
+          class="card-img-top"
+          src="{{ character.thumbnail.path + '.' + character.thumbnail.extension }}"
+          alt="Image for {{character.name}}">
+      </div>
+      <div class="card-block">
+        <h4 class="card-title">{{character.name}}</h4>
+        <p>{{character.description}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <div class="card">
+      <div class="card-block">
+        <h5>Key Links</h5>        
+        <span
+          class="character-link"
+          *ngFor="let url of character.urls">
+          <span class="oi oi-link-intact" aria-hidden="true"></span>
+          <a href="{{url.url}}">{{url.type}}</a>
+        </span>
+      </div>
+    </div>
+    <div class="card character-appearances">
+      <div class="card-block">
+        <h5>Appearances</h5>
+        <p class="font-italic text-muted">select a section to discover more</p>
+        <div class="list-group character-appearances-list">
+          <a class="list-group-item list-group-item-action justify-content-between">
+            Comics
+            <span class="badge badge-default">{{character.comics.available }}</span>  
+          </a>
+          <a class="list-group-item list-group-item-action justify-content-between">
+            Events
+            <span class="badge badge-default">{{character.events.available}}</span>
+          </a>
+          <a class="list-group-item list-group-item-action justify-content-between">
+            Series
+            <span class="badge badge-default">{{character.series.available}}</span>
+          </a>
+          <a class="list-group-item list-group-item-action justify-content-between">
+            Stories
+            <span class="badge badge-default">{{character.stories.available}}</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
