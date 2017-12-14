@@ -1,4 +1,5 @@
-<div
+<a
+  [routerLink]="['/characters', character.id]"
   class="list-group-item"
   [ngClass]="activeClass"
   (mouseover)="toggleActiveClass($event)"
@@ -29,4 +30,4 @@
       <span class="badge badge-default">Stories {{character.stories.available }}</span>
     </div>
   </div>
-</div>
+</a>
